@@ -94,7 +94,8 @@ def reg():
 #Запуск страницы с контентом
 @app.route('/index')
 def index():
-    return render_template('index.html')
+    cards = Card.query.all()
+    return render_template('index.html', cards=cards)
 
 #Запуск страницы c картой
 @app.route('/card/<int:id>')
