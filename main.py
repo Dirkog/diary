@@ -68,9 +68,8 @@ def login():
             if form_login == user.user_email and form_password == user.password:
                 session['user_email'] = user.user_email
                 return redirect('/index')
-            else:
-                error = 'Неправильно указан пользователь или пароль'
-                return render_template('login.html', error=error)
+        error = 'Неправильно указан пользователь или пароль'
+        return render_template('login.html', error=error)
     else:
         return render_template('login.html')
 
